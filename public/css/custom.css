@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;900&display=swap');
+
+
+
+*:focus,
+*:active,
+*:hover {
+  -webkit-tap-highlight-color: transparent;
+  /* For iOS Safari */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a,
+img,
+span,
+input,
+button { display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { height: auto; }
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+button { cursor: pointer; }
+
+input {
+  width: 100%;
+  outline: none;
+}
+
+.animation_BounceIn{
+  animation: bounceIn 1s ease-in;
+}
+
+.animation_BounceOut{
+  animation: bounceOut 1s ease-in;
+}
+
+.animation_fade{
+  animation: fadeIn 500ms ease-in;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+.text-container {
+  max-width: auto; 
+  margin: 0 auto;
+}
+
+/* .text-container p::after {
+  content: '...';
+  display: inline;
+} */
+
+

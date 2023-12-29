@@ -1,0 +1,48 @@
+<div class="">
+    <div class="hidden">
+      <span
+        class="material-symbols-outlined text-white bg-zinc-700 rounded-full p-3"
+        >arrow_back_ios</span
+      ><span
+        class="material-symbols-outlined text-white bg-zinc-700 rounded-full p-3"
+        >arrow_forward_ios</span
+      >
+    </div>
+    <div class="relative mt-2 bg-zinc-800 h-14 w-full rounded-full pl-14 pr-16 pb-0 flex">
+      <input
+        type="text"
+        class="h-full text-white text-xl font-outfit hidden transition-all"
+        placeholder="What Do You Want To Listen To?"
+        id="searchBar"
+      />
+      <img src="/images/logo.svg" alt="" class="m-auto animation_BounceIn" width="130" id="logoImg">
+      <span
+        class="material-symbols-outlined text-white bg-transparent rounded-full p-3 absolute top-0 left-0 m-1"
+        >search</span
+      >
+    </div>
+    <div class="absolute top-0 right-0 " style="margin:4px 4px 20px 0">
+      <button class="relative z-30" id="profileBtn">
+        <img src="<%=image %>" alt="" class="rounded-full w-12 h-12" />
+      </button>
+      <button class="hidden text-white absolute top-0 right-0 pt-2"  id="closeBtn"><span class="material-symbols-outlined animation_fade" style="font-size: 32px; margin: 8px 10px 0 0;">close</span></button>
+      <div class="absolute bg-zinc-700 w-36 right-5 hidden" id="profileMenu">
+        <ul class="flex flex-col gap-2 text-white text-xl py-4">
+          <a href="">
+            <li
+              class="pl-2 py-2 transition-all cursor-pointer hover:bg-zinc-600"
+            >
+              Profile
+            </li></a
+          >
+          <a href="">
+            <li
+              class="pl-2 py-2 transition-all cursor-pointer hover:bg-zinc-600"
+            >
+              Logout
+            </li></a
+          >
+        </ul>
+      </div>
+    </div>
+  </div>

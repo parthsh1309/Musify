@@ -1,0 +1,122 @@
+<%-include('./partials/boilerplate.ejs')%>
+<body class="bg-bgColor relative">
+  <%-include('./partials/header.ejs') %>
+
+  <main class="p-4 mb-20">
+    <div>
+      <span class="text-2xl text-white font-outfit">Recommended for you</span>
+
+      <div class="overflow-x-scroll w-full h-auto flex text-white gap-3 py-4">
+        <% for( let i = 0; i < userRecommendations.length; i++ ) { %>
+        <div
+          class="w-44 h-auto flex-shrink-0 text-container rounded-2xl"
+          data-max-words="4"
+          style="background-color: rgba(80, 80, 80, 0.397)"
+        >
+          <img
+            src="<%=userRecommendations[i].album.images[1].url %>"
+            alt=""
+            class="rounded-2xl animation_fade"
+            loading="lazy"
+          />
+          <div class="py-3 px-4">
+            <p class="text-base"><%=userRecommendations[i].album.name %></p>
+            <p class="text-sm text-gray-400">
+              <%=userRecommendations[i].album.artists[0].name %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div>
+      <span class="text-2xl text-white font-outfit">Artists you Follows</span>
+
+      <div class="overflow-x-scroll w-full h-auto flex text-white gap-3 py-4">
+        <% for( let i = 0; i < artists.length; i++ ) { %>
+        <div
+          class="w-44 h-auto flex-shrink-0 text-container rounded-2xl"
+          style="background-color: rgba(80, 80, 80, 0.397)"
+        >
+          <div class="w-full h-44 p-4 rounded-full overflow-hidden">
+            <img
+              src="<%=artists[i].images[1].url %>"
+              alt=""
+              class="rounded-full h-44 w-44"
+            />
+          </div>
+          <div class="py-3 px-4">
+            <p class="text-base"><%=artists[i].name %></p>
+            <p class="text-sm text-gray-400">Artists</p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <div>
+      <div class="flex justify-between">
+        <span class="text-2xl text-white font-outfit">Get New Released</span>
+        <span class="text-xl text-white font-bold">See all</span>
+      </div>
+      <div class="overflow-x-scroll w-full h-auto flex text-white gap-3 py-4">
+        <% for( let i = 0; i < newReleases.length; i++ ) { %>
+        <div
+          class="w-44 h-auto flex-shrink-0 text-container rounded-2xl"
+          data-max-words="4"
+          style="background-color: rgba(80, 80, 80, 0.397)"
+        >
+          <img
+            src="<%=newReleases[i].images[1].url%>"
+            alt=""
+            class="rounded-2xl animation_fade"
+            loading="lazy"
+          />
+          <div class="py-3 px-4">
+            <p class="text-base"><%=newReleases[i].name %></p>
+            <p class="text-sm text-gray-400">
+              <%=newReleases[i].artists[0].name %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="flex justify-between">
+        <span class="text-2xl text-white font-outfit">Popular Playlists</span>
+        <span class="text-xl text-white font-bold">See all</span>
+      </div>
+      <div class="overflow-x-scroll w-full h-auto flex text-white gap-3 py-4">
+        <% for( let i = 0; i < popularPlaylist.length; i++ ) { %>
+        <div
+          class="w-44 h-auto flex-shrink-0 text-container rounded-2xl"
+          data-max-words="4"
+          style="background-color: rgba(80, 80, 80, 0.397)"
+        >
+          <img
+            src="<%=popularPlaylist[i].images[0].url%>"
+            alt=""
+            class="rounded-2xl animation_fade"
+            loading="lazy"
+          />
+          <div class="py-3 px-4">
+            <p class="text-base"><%=popularPlaylist[i].name %></p>
+            <p class="text-sm text-gray-400" >
+              <% const description = popularPlaylist[i].description || ''; %>
+              <%= description.split(' ').slice(0, 6).join(' ') + '...' %>
+            </p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </main>
+  <%-include('./partials/footer.ejs') %>
+  <script src="/js/searchBar.js"></script>
+  <script src="/js/wordLimit.js"></script>
+</body>
+</html>

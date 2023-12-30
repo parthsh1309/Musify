@@ -57,6 +57,13 @@ input {
 .animation_fade{
   animation: fadeIn 500ms ease-in;
 }
+.animation_backInUp{
+  animation: bounceInUp 1s ease-in-out;
+}
+
+.animation_backOutDown{
+  animation: backOutDown 1s ease-in;
+}
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -67,6 +74,22 @@ input {
   margin: 0 auto;
 }
 
+.input{
+  cursor: pointer;
+  accent-color: #12e29a;
+}
+
+.input::-webkit-slider-runnable-track{
+  height: 5px;
+  border-radius: 30px;
+}
+.input::-webkit-slider-thumb{
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0px #12e29a14 0 1px 3px 1px #00000026 0 1px 2px 0 #0000004d;
+  margin-top: -5px;
+}
 /* .text-container p::after {
   content: '...';
   display: inline;

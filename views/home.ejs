@@ -2,7 +2,7 @@
 <body class="bg-bgColor relative">
   <%-include('./partials/header.ejs') %>
 
-  <main class="p-4 mb-20">
+  <main class="p-4" id="main">
     <div>
       <span class="text-2xl text-white font-outfit">Recommended for you</span>
 
@@ -84,7 +84,6 @@
       </div>
     </div>
 
-
     <div>
       <div class="flex justify-between">
         <span class="text-2xl text-white font-outfit">Popular Playlists</span>
@@ -105,7 +104,7 @@
           />
           <div class="py-3 px-4">
             <p class="text-base"><%=popularPlaylist[i].name %></p>
-            <p class="text-sm text-gray-400" >
+            <p class="text-sm text-gray-400">
               <% const description = popularPlaylist[i].description || ''; %>
               <%= description.split(' ').slice(0, 6).join(' ') + '...' %>
             </p>
@@ -115,8 +114,14 @@
       </div>
     </div>
   </main>
+
+  <%-include('./partials/smPlayer.ejs') %>
+
+  <%-include('./partials/lgPlayer.ejs') %>
+  
   <%-include('./partials/footer.ejs') %>
   <script src="/js/searchBar.js"></script>
   <script src="/js/wordLimit.js"></script>
+  <script src="/js/player.js"></script>
 </body>
-</html>
+<!-- </html> -->

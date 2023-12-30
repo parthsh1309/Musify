@@ -5,7 +5,7 @@ const session = require('express-session');
 require('dotenv').config({ path: './config/.env' });
 
 
-const cors = require("cors");
+// const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const secretkey = process.env.secret_key;
 app.use(
@@ -13,10 +13,6 @@ app.use(
     secret: secretkey,
     resave: false,
     saveUninitialized: true,
-    // cookie: {
-    //     httpOnly: true,
-    //     secure: true
-    // }
   })
 );
 
